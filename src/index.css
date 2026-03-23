@@ -61,6 +61,7 @@ button {
 .scene {
   width: 100vw;
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1729,6 +1730,13 @@ button {
   z-index: 11;
 }
 
+/* Hide scene label when viewport is too short */
+@media (max-height: 850px) {
+  .scene-label {
+    display: none;
+  }
+}
+
 /* ═══════════════════════════════════════════
    LIGHT THEME — Material You Light
    ═══════════════════════════════════════════ */
@@ -2117,9 +2125,17 @@ button {
 
 /* ═══ RESPONSIVE ═══ */
 @media (max-width: 500px) {
+  html,
+  body {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
   :root {
     --phone-w: 100vw;
     --phone-h: 100vh;
+    --phone-h: 100dvh; /* Dynamic viewport height for mobile browsers */
     --radius: 0px;
     --screen-radius: 0px;
   }

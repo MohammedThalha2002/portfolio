@@ -44,11 +44,43 @@ export function usePhoneOS() {
   const [notifications, setNotifications] = useState([...NOTIFICATIONS]);
   const touchStartY = useRef(0);
   const settingsTaps = useRef(0);
+  const isNavigatingFromHistory = useRef(false);
 
   /* ── Boot sequence ── */
   useEffect(() => {
     const id = setTimeout(() => setView("lock"), 2500);
     return () => clearTimeout(id);
+  }, []);
+
+  /* ── Browser history integration ── */
+  useEffect(() => {
+    // Push view changes to browser history (except boot/lock)
+    if (
+      view !== "boot" &&
+      view !== "lock" &&
+      !isNavigatingFromHistory.current
+    ) {
+      window.history.pushState({ view }, "", `#${view}`);
+    }
+    isNavigatingFromHistory.current = false;
+  }, [view]);
+
+  useEffect(() => {
+    // Handle browser back/forward button
+    const onPopState = (e: PopStateEvent) => {
+      isNavigatingFromHistory.current = true;
+      const targetView = (e.state?.view as ViewId) || "home";
+      setView(targetView);
+      setShadeOpen(false);
+    };
+
+    // Set initial history state
+    if (window.history.state === null) {
+      window.history.replaceState({ view: "home" }, "", "#home");
+    }
+
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
   /* ── Keyboard handler ── */
@@ -96,6 +128,7 @@ export function usePhoneOS() {
     setUnlocking(true);
     setTimeout(() => setUnlockSuccess(true), 400);
     setTimeout(() => {
+      isNavigatingFromHistory.current = false; // Allow history push for unlock → home
       setView("home");
       setUnlocking(false);
       setUnlockSuccess(false);
