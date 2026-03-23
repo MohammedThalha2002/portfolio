@@ -37,13 +37,13 @@ export function usePhoneOS() {
     ...INITIAL_BADGES,
   });
   const [shadeOpen, setShadeOpen] = useState(false);
-  const [settingsTaps, setSettingsTaps] = useState(0);
   const [devMode, setDevMode] = useState(false);
   const [toast, setToast] = useState("");
   const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [tiles, setTiles] = useState<TileStates>({ ...INITIAL_TILES });
   const [notifications, setNotifications] = useState([...NOTIFICATIONS]);
   const touchStartY = useRef(0);
+  const settingsTaps = useRef(0);
 
   /* ── Boot sequence ── */
   useEffect(() => {
@@ -134,16 +134,14 @@ export function usePhoneOS() {
   }, []);
 
   const handleSettingsTap = useCallback(() => {
-    setSettingsTaps((prev) => {
-      const next = prev + 1;
-      if (next >= 7) {
-        setDevMode(true);
-        showToast("You are now a developer! 🎉");
-      } else {
-        showToast(`${7 - next} taps to developer mode`);
-      }
-      return next;
-    });
+    settingsTaps.current += 1;
+    const count = settingsTaps.current;
+    if (count >= 7) {
+      setDevMode(true);
+      showToast("You are now a developer! 🎉");
+    } else {
+      showToast(`${7 - count} taps to developer mode`);
+    }
   }, [showToast]);
 
   return {
