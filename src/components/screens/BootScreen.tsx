@@ -7,7 +7,7 @@ export default function BootScreen({ active }: Props) {
   return (
     <div className={`view boot-screen ${active ? "active" : ""}`}>
       <div className="boot-logo">MT</div>
-      <div className="boot-text">Android Developer</div>
+      <div className="boot-text">Full Stack Developer</div>
       <div className="boot-spinner" />
     </div>
   );

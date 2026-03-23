@@ -9,7 +9,7 @@ export const NOTIFICATIONS: Notification[] = [
   },
   {
     app: "GitHub",
-    title: "ComposeNodeEditor",
+    title: "PulseSDK",
     body: "New star from @AndroidDev",
     time: "15m ago",
   },

@@ -2,29 +2,43 @@ import type { Project } from "../types";
 
 export const PROJECTS: Project[] = [
   {
-    type: "⚡ Open Source Library",
-    name: "ComposeNodeEditor",
+    type: "⚡ Full-Stack Monitoring Platform",
+    name: "PulseSDK",
     description:
-      "A Jetpack Compose visual node editor with infinite canvas (zoom/pan), draggable nodes, Bezier edge routing, port-based connections, and undo/redo. Targets Compose Multiplatform — Android + Desktop.",
-    tags: ["Kotlin", "Jetpack Compose", "Multiplatform", "Open Source"],
+      "Full-stack crash & ANR monitoring SDK built with Kotlin Multiplatform: shared KMP core, Android lib, Ktor backend, and React dashboard. ANR watchdog with 5s heartbeat-thread detection, breadcrumb engine auto-capturing navigation/network/memory (circular buffer, 30 events). HMAC-SHA256 authentication with APK fingerprint validation. AI insight pipeline (Gemini, Ollama, OpenAI, Claude) generating root cause & fix suggestions. Model Context Protocol server enabling AI editors to query crashes via natural language. <200ms ingest latency with Room-buffered batch upload.",
+    tags: ["Kotlin Multiplatform", "Ktor", "React", "TypeScript", "AI", "MCP"],
+  },
+  {
+    type: "� Full Stack Web Application",
+    name: "CertifyEase",
+    description:
+      "Revolutionized bulk digital certificate generation with AI-driven image recognition for enhanced verification accuracy. Web dashboard with automated workflows and Docker containerization.",
+    tags: ["ReactJS", "Node.js", "MongoDB", "Docker", "AI/ML"],
     link: {
       label: "View on GitHub →",
-      url: "https://github.com/MohammedThalha2002",
+      url: "https://github.com/MohammedThalha2002/certificate-generator",
     },
   },
   {
-    type: "🏢 Cross-Org Internal Library",
-    name: "Media Editor SDK",
+    type: "🚗 IoT Connected Systems",
+    name: "Next-Gen Cockpit Intelligence",
     description:
-      "Designed & solely maintained a media editing library (crop, draw, text overlay) adopted by Zoho Cliq, Arattai, and multiple internal Zoho applications.",
-    tags: ["Canvas API", "Kotlin", "Bitmap", "Library Design"],
-    note: "Adopted by 3+ Zoho products →",
+      "Collaborated with Accenture on IoT-enabled vehicle project. Real-time monitoring dashboard with EAR detection, alcohol sensing, and comprehensive driving parameter analysis using embedded systems.",
+    tags: ["IoT", "Raspberry Pi", "Firebase", "React", "Real-time"],
+    link: {
+      label: "View Demo →",
+      url: "https://iot-car-accenture.vercel.app/",
+    },
   },
   {
-    type: "📄 Internal Library",
-    name: "Custom PDF Viewer",
+    type: "� Full Stack Service Platform",
+    name: "HandyHub",
     description:
-      "Zero paging dependencies PDF viewer resolving cross-app Paging library version conflicts across Zoho's entire Android ecosystem.",
-    tags: ["Kotlin", "Custom Scroll", "Memory Mgmt"],
+      "Comprehensive home service website connecting users with local technicians and service providers. Built with enterprise architecture patterns and microservices design.",
+    tags: ["Angular", "Spring Boot", "PostgreSQL", "REST API"],
+    link: {
+      label: "View Backend →",
+      url: "https://github.com/MohammedThalha2002/Home-Service-Backend/",
+    },
   },
 ];

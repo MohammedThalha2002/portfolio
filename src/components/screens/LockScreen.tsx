@@ -86,9 +86,8 @@ export default function LockScreen({
       </div>
 
       <div className="lock-name-card">
-        <div className="dev-label">// Android Developer</div>
+        <div className="dev-label">// Full Stack Developer</div>
         <div className="dev-name">Mohammed Thalha</div>
-        <div className="dev-role">Zoho Corp · Arattai Messenger</div>
       </div>
 
       <div className="fingerprint-area">

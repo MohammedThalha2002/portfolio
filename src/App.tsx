@@ -104,7 +104,7 @@ export default function App() {
       </Phone>
 
       <div className="scene-label">
-        Mohammed Thalha · Android Developer Portfolio · 2025
+        Mohammed Thalha · Android Developer Portfolio · 2026
       </div>
     </div>
   );
