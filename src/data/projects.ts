@@ -9,7 +9,7 @@ export const PROJECTS: Project[] = [
     tags: ["Kotlin Multiplatform", "Ktor", "React", "TypeScript", "AI", "MCP"],
   },
   {
-    type: "� Full Stack Web Application",
+    type: "🎓 Full Stack Web Application",
     name: "CertifyEase",
     description:
       "Revolutionized bulk digital certificate generation with AI-driven image recognition for enhanced verification accuracy. Web dashboard with automated workflows and Docker containerization.",
@@ -31,7 +31,7 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    type: "� Full Stack Service Platform",
+    type: "🏠 Full Stack Service Platform",
     name: "HandyHub",
     description:
       "Comprehensive home service website connecting users with local technicians and service providers. Built with enterprise architecture patterns and microservices design.",

@@ -16,7 +16,7 @@ export const CONTACT_LINKS: ContactLink[] = [
     icon: <Linkedin size={ICON_SIZE} strokeWidth={ICON_STROKE} />,
     label: "LinkedIn",
     value: "mohammed-thalha",
-    href: "https://linkedin.com/in/mohammed-thalha",
+    href: "https://www.linkedin.com/in/mohammed-thalha-a258a81b6/",
     iconBg: "rgba(168,199,250,0.15)",
     external: true,
   },
